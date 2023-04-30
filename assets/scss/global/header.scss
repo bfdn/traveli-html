@@ -1,0 +1,97 @@
+.header {
+    box-shadow: 0px 5px 8px 0px rgba(168, 168, 168, 0.25);
+    -webkit-box-shadow: 0px 5px 8px 0px rgba(168, 168, 168, 0.25);
+    -moz-box-shadow: 0px 5px 8px 0px rgba(168, 168, 168, 0.25);
+
+    height: pxtorem(80px);
+    position: relative;
+
+    @include mq('tablet') {}
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        @include plpr;
+    }
+
+    &__logo {
+        img {}
+    }
+
+    .fa-bars {
+        display: block;
+
+        @include mq('tablet') {
+            display: none;
+        }
+    }
+
+    .navbar {
+        opacity: 0;
+        font-family: $font-semibold-inter;
+        font-size: $font-xs;
+        font-weight: 600;
+        transform: translateY(-500px);
+        transition: all 1s;
+
+
+        @include mq('tablet') {
+            width: auto;
+            transform: translateY(0);
+            opacity: 1;
+            transition: none;
+        }
+
+        &__item {
+            @include mq('tablet') {
+                padding: pxtorem(16px) pxtorem(18px);
+            }
+
+
+
+            &:hover {
+                color: $dark-green-color;
+            }
+        }
+
+        .btn {
+            display: inline-block;
+
+            @include mq('tablet') {
+                max-width: pxtorem(147px);
+                max-height: pxtorem(61px);
+            }
+
+            &:hover {
+                color: $light-color;
+            }
+        }
+
+        &--show {
+            opacity: 1;
+            box-shadow: 0px 5px 8px 0px rgba(168, 168, 168, 0.25);
+            -webkit-box-shadow: 0px 5px 8px 0px rgba(168, 168, 168, 0.25);
+            -moz-box-shadow: 0px 5px 8px 0px rgba(168, 168, 168, 0.25);
+            background-color: $light-color;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            //top: 15%;
+            left: 0;
+            width: 100%;
+            transform: translateY(65%);
+            z-index: 1;
+            //transform: translateY(8.3%) translateX(0px);
+
+            .navbar__item {
+                padding: pxtorem(8px) pxtorem(12.5px);
+            }
+
+            .navbar__item:has(+ .navbar__item) {
+                border-bottom: 1px solid $gray-color
+            }
+        }
+    }
+}

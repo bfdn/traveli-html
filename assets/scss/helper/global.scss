@@ -1,0 +1,50 @@
+body {
+    font-family: $font-regular-istokweb;
+    line-height: 1.4;
+    font-size: $font-xs;
+    color: $dark-color;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.2;
+}
+
+
+.container {
+    //width: 98%;
+    max-width: $max-width;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mq('tablet') {
+        //width: 100%;
+    }
+}
+
+.btn {
+    padding: pxtorem(10px) pxtorem(16px) !important;
+    //padding: pxtorem(8.5px) pxtorem(6.5px) !important;
+    @include radius(10px);
+    font-family: $font-semibold-inter;
+    font-size: pxtorem($font-s);
+    text-align: center;
+
+    &__bg-green {
+        background-color: $dark-green-color;
+        color: $light-color;
+    }
+
+    &__bg-light-color {}
+
+    &__light-color {}
+
+    &-plus {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    &__border {}
+}

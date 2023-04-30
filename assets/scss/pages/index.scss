@@ -1,0 +1,661 @@
+.slide {
+    padding-top: pxtorem(50px);
+    padding-bottom: pxtorem(50px);
+
+    @include mq('tablet') {
+        padding-top: pxtorem(100px);
+        padding-bottom: pxtorem(100px);
+    }
+
+    .container {
+        @include plpr;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        grid-gap: $gutter30;
+
+        @include mq('tablet') {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__img {
+        img {
+            @include fitImg;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        &-title {
+            font-family: $font-bold-istokweb;
+            font-size: pxtorem($font-xm);
+
+            @include mq('tablet') {
+                font-size: pxtorem($font-l);
+            }
+        }
+
+        &-text {
+            font-family: $font-regular-istokweb;
+            font-size: pxtorem($font-xs);
+
+            @include mq('tablet') {
+                font-size: pxtorem($font-xm);
+            }
+        }
+
+        &-search {
+            padding: pxtorem(25px);
+            background-color: $light-color;
+            border-radius: pxtorem(63px);
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(0, 0, 0, 0.25);
+            //z-index: -99;
+
+            @include mq('tablet') {
+                // z-index: initial;
+            }
+
+            form {
+                display: flex;
+                text-align: center;
+                gap: pxtorem($gutter30);
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                @include mq('tablet') {
+                    flex-direction: row;
+                }
+
+                .form__group {
+                    display: grid;
+                    grid-template-columns: min-content max-content;
+                    align-items: center;
+                    text-align: center;
+                    position: relative;
+
+
+
+                    &:nth-of-type(1) {
+                        img {
+                            grid-row: 1/3;
+                        }
+                    }
+
+                    &:nth-of-type(2) {
+                        @include mq('tablet') {
+                            &:before {
+                                display: block;
+                                content: " ";
+                                height: 32px;
+                                width: 2px;
+                                background-color: $dark-gray-color1;
+                                position: absolute;
+                                left: -20px;
+                            }
+                        }
+
+                        img {
+                            grid-row: 1/3;
+                        }
+                    }
+
+                    label {
+                        font-family: $font-semibold-inter;
+                        font-size: pxtorem($font-xs);
+                        font-weight: 600;
+                        display: block;
+                    }
+
+                    label:nth-of-type(1) {
+                        //transform: translateY(5px);
+                        transform: translateX(-10px);
+                        //z-index: 1;
+                    }
+
+                    label:nth-of-type(2) {}
+                }
+
+                input {
+                    border: none;
+                    padding-left: 25px;
+                    outline: none;
+
+                    &::-webkit-calendar-picker-indicator {
+                        background: url("../img/arrow.svg") no-repeat;
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+
+                select {
+                    padding-left: 20px;
+                    padding-right: 25px;
+                    border: none;
+                    outline: none;
+                    appearance: none;
+                    background: url("../img/arrow.svg") no-repeat right;
+                    //background: url("../img/arrow.svg") no-repeat;
+                    //background-position: 100% 50%;
+                    //transform: translateY(-30px);
+                }
+
+                button {
+                    background-color: transparent;
+                }
+            }
+        }
+
+    }
+}
+
+.about {
+    padding-top: pxtorem(50px);
+    padding-bottom: pxtorem(50px);
+
+    @include mq('tablet') {
+        padding-top: pxtorem(100px);
+        padding-bottom: pxtorem(100px);
+    }
+
+    .container {
+        @include plpr;
+        display: grid;
+        grid-template-columns: 1fr;
+        //align-items: center;
+        justify-items: center;
+        align-items: center;
+        grid-gap: $gutter30;
+
+        @include mq('tablet') {
+            grid-template-columns: repeat(2, 1fr);
+            justify-items: initial;
+        }
+    }
+
+    &__img {
+        max-width: pxtorem(500px);
+
+        img {
+            @include fitImg;
+        }
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: $gutter15;
+
+        @include mq('tablet') {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        &-toptitle {
+            font-size: pxtorem($font-s);
+            font-family: $font-semibold-inter;
+            color: $dark-green-color;
+            grid-column: 1/-1;
+
+            @include mq('tablet') {
+                font-size: pxtorem($font-xm);
+            }
+        }
+
+        &-title {
+            font-size: pxtorem($font-xm);
+            font-family: $font-bold-istokweb;
+            grid-column: 1/-1;
+
+            @include mq('tablet') {
+                font-size: pxtorem($font-m);
+            }
+        }
+
+        &-text {
+            grid-column: 1/-1;
+            font-size: pxtorem($font-xs);
+            font-family: $font-regular-istokweb;
+
+            @include mq('tablet') {
+                font-size: pxtorem($font-s);
+            }
+        }
+
+        &-info {
+            p {
+                font-size: pxtorem($font-xl);
+                color: $dark-green-color;
+            }
+
+            span {
+                font-size: pxtorem($font-s);
+            }
+
+            &:nth-of-type(1) {}
+
+            &:nth-of-type(2) {}
+
+            &:nth-of-type(3) {}
+
+            &:nth-of-type(4) {}
+        }
+    }
+}
+
+.tours {
+    padding-top: pxtorem(50px);
+    padding-bottom: pxtorem(50px);
+
+    @include mq('tablet') {
+        padding-top: pxtorem(100px);
+        padding-bottom: pxtorem(100px);
+    }
+
+    .container {
+        @include plpr;
+
+    }
+
+    &__toptitle {
+        font-size: pxtorem($font-s);
+        font-family: $font-semibold-inter;
+        color: $dark-green-color;
+        font-weight: bold;
+        //grid-column: 1/-1;
+        margin-bottom: pxtorem($gutter30);
+
+        @include mq('tablet') {
+            font-size: pxtorem($font-xm);
+        }
+    }
+
+    &__title {
+        font-size: pxtorem($font-xm);
+        font-family: $font-bold-istokweb;
+        font-weight: bold;
+        margin-bottom: pxtorem($gutter15);
+
+        @include mq('tablet') {
+            font-size: pxtorem($font-m);
+        }
+    }
+
+    &__list {
+
+
+        @include mq('desktop') {}
+
+        .flickity-viewport {
+            height: 430px;
+        }
+
+        .flickity-page-dots {
+            bottom: pxtorem(-60px);
+
+            .dot {
+                width: pxtorem(20px);
+                height: pxtorem(20px);
+                background-color: $gray-color;
+
+                &.is-selected {
+                    background-color: $dark-green-color;
+                }
+            }
+        }
+    }
+
+    &__item {
+        padding: pxtorem(20px);
+        background-color: $light-gray-color;
+        text-transform: uppercase;
+        font-family: $font-bold-istokweb;
+        font-weight: bold;
+        max-height: pxtorem(430px);
+        max-width: pxtorem(350px);
+        border-radius: pxtorem(13px);
+        box-shadow: 0px 4px 8px 0px rgba(168, 168, 168, 0.25);
+        -webkit-box-shadow: 0px 4px 8px 0px rgba(168, 168, 168, 0.25);
+        -moz-box-shadow: 0px 4px 8px 0px rgba(168, 168, 168, 0.25);
+
+        &:has(+ &) {
+            margin-right: pxtorem($gutter15);
+
+            @include mq('tablet') {
+                margin-right: pxtorem($gutter15);
+            }
+        }
+
+
+
+
+        &-img {
+            height: pxtorem(226px);
+
+            img {
+                @include fitImg;
+            }
+        }
+
+        &-title {
+            font-size: pxtorem($font-xm);
+            margin-top: pxtorem($gutter30);
+        }
+
+        &-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: pxtorem($gutter30);
+
+            &-price {
+                color: $dark-green-color;
+                font-size: pxtorem($font-xm);
+                flex: 1;
+            }
+
+            &-day {
+                color: $dark-gray-color1;
+                font-size: pxtorem($font-xs);
+                flex: 1;
+            }
+
+        }
+    }
+}
+
+.testimonials {
+    padding-top: pxtorem(50px);
+    padding-bottom: pxtorem(50px);
+
+    @include mq('tablet') {
+        padding-top: pxtorem(100px);
+        padding-bottom: pxtorem(100px);
+    }
+
+    .container {
+        @include plpr;
+
+
+        @include mq('desktop') {}
+    }
+
+    &__toptitle {
+        justify-self: start;
+        font-size: pxtorem($font-s);
+        font-family: $font-semibold-inter;
+        color: $dark-green-color;
+        font-weight: bold;
+        grid-column: 1/-1;
+
+        @include mq('tablet') {
+            font-size: pxtorem($font-xm);
+        }
+    }
+
+    &__title {
+        justify-self: start;
+        grid-column: 1/-1;
+        font-size: pxtorem($font-xm);
+        font-family: $font-bold-istokweb;
+        font-weight: bold;
+
+        @include mq('tablet') {
+            font-size: pxtorem($font-m);
+        }
+    }
+
+    &__list {
+        grid-column: 1/-1;
+
+
+
+        .flickity-viewport {
+            height: 430px !important;
+        }
+
+        .flickity-page-dots {
+            bottom: pxtorem(-60px);
+
+            .dot {
+                width: pxtorem(20px);
+                height: pxtorem(20px);
+                background-color: $gray-color;
+
+                &.is-selected {
+                    background-color: $dark-green-color;
+                }
+            }
+        }
+    }
+
+    &__item {
+
+        background-color: $light-color;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        padding-top: pxtorem(50px);
+        padding-bottom: pxtorem(20px);
+        padding-left: pxtorem(25px);
+        padding-right: pxtorem(25px);
+        max-width: pxtorem(245px);
+        border-radius: pxtorem(35px);
+        text-align: center;
+
+        &:has(+ &) {
+            margin-right: pxtorem($gutter30);
+        }
+
+        &-img {
+            max-width: pxtorem(113px);
+            margin: 0 auto;
+
+            img {
+                @include fitImg;
+            }
+        }
+
+        &-title {
+            font-family: $font-extra-bold-inter;
+            font-size: pxtorem($font-xm);
+            font-weight: bold;
+            margin-top: pxtorem(12px);
+
+            @include mq('tablet') {
+                font-size: pxtorem($font-m);
+            }
+        }
+
+        &-content {
+            margin-top: pxtorem(12px);
+            font-family: $font-regular-inter;
+            font-size: pxtorem(12px);
+        }
+
+        .stars {
+            margin-top: pxtorem(12px);
+
+            i {
+                color: $dark-yellow-color;
+            }
+        }
+
+        &:nth-of-type(1) {
+
+            background: url("../img/customer-bg-1.png") no-repeat top;
+        }
+
+        &:nth-of-type(2) {
+            background: url("../img/customer-bg-2.png") no-repeat top;
+        }
+
+        &:nth-of-type(3) {
+            background: url("../img/customer-bg-3.png") no-repeat top;
+        }
+
+        &:nth-of-type(4) {
+            background: url("../img/customer-bg-4.png") no-repeat top;
+        }
+    }
+}
+
+.alltours {
+    padding-top: pxtorem(50px);
+    padding-bottom: pxtorem(50px);
+
+    @include mq('tablet') {
+        padding-top: pxtorem(100px);
+        padding-bottom: pxtorem(100px);
+    }
+
+    .container {
+        @include plpr;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(14rem, max-content));
+        justify-content: center;
+        gap: pxtorem($gutter30);
+
+        @include mq('desktop') {
+            grid-template-columns: repeat(auto-fit, minmax(16rem, max-content));
+        }
+
+    }
+
+    &__toptitle {
+        grid-column: 1/-1;
+        font-size: pxtorem($font-xm);
+        font-family: $font-bold-istokweb;
+        font-weight: bold;
+        text-align: center;
+
+
+        @include mq('tablet') {
+            font-size: pxtorem($font-m);
+            width: 60%;
+            margin: 0 auto;
+        }
+    }
+
+    &__title {
+        font-size: pxtorem($font-s);
+        font-family: $font-regular-istokweb;
+        text-align: center;
+        grid-column: 1/-1;
+
+
+        @include mq('tablet') {
+            width: 60%;
+            margin: 0 auto;
+        }
+    }
+
+    .btn {
+        grid-column: 1/-1;
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+        margin: 0 auto;
+        font-weight: bold;
+
+        @include mq('large') {
+            grid-row: 3/4;
+            grid-column: 2/4;
+            align-self: start;
+        }
+    }
+
+    &__list {
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(14rem, max-content));
+        justify-content: center;
+        gap: pxtorem($gutter30);
+
+        @include mq('tablet') {}
+    }
+
+    &__item {
+        padding: pxtorem(20px);
+        background-color: $light-gray-color;
+        text-transform: uppercase;
+        font-family: $font-bold-istokweb;
+        font-weight: bold;
+        max-width: pxtorem(370px);
+        border-radius: pxtorem(13px);
+        box-shadow: 0px 4px 8px 0px rgba(168, 168, 168, 0.25);
+        -webkit-box-shadow: 0px 4px 8px 0px rgba(168, 168, 168, 0.25);
+        -moz-box-shadow: 0px 4px 8px 0px rgba(168, 168, 168, 0.25);
+
+
+        &-img {
+            grid-area: img;
+
+            img {
+                @include fitImg;
+            }
+        }
+
+        &-title {
+            grid-area: title;
+            font-size: pxtorem($font-xm);
+            margin-top: pxtorem($gutter30);
+        }
+
+        &-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: pxtorem($gutter30);
+            margin-top: pxtorem($gutter30);
+
+            &-price {
+                color: $dark-green-color;
+                font-size: pxtorem($font-xm);
+            }
+
+            &-day {
+                color: $dark-gray-color1;
+                font-size: pxtorem($font-xs);
+            }
+
+        }
+
+        &:nth-of-type(3) {
+            @include mq('large') {
+                grid-row: 3/4;
+                grid-column: 1/2;
+            }
+        }
+
+        &:nth-of-type(4) {
+            @include mq('large') {
+                grid-column: 2/3;
+                grid-row: 3/4;
+                transform: translateY(120px);
+            }
+        }
+
+        &:nth-of-type(5) {
+            @include mq('large') {
+                grid-column: 3/4;
+                grid-row: 3/4;
+                transform: translateY(120px);
+            }
+        }
+
+        &:nth-of-type(6) {
+            @include mq('large') {
+                grid-row: 3/4;
+                grid-column: 4/5;
+            }
+        }
+    }
+}

@@ -1,0 +1,80 @@
+.footer {
+    padding-top: pxtorem(50px);
+    padding-bottom: pxtorem(50px);
+
+    @include mq('tablet') {
+        padding-top: pxtorem(100px);
+        padding-bottom: pxtorem(100px);
+    }
+
+    .container {
+        @include plpr;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: pxtorem($gutter40);
+        justify-content: space-between;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: pxtorem($gutter30);
+
+        @include mq('tablet') {
+            gap: pxtorem($gutter30);
+        }
+
+        &:nth-of-type(4) {
+            width: pxtorem(270px);
+        }
+
+        h4 {
+            font-family: $font-bold-istokweb;
+            font-weight: 700;
+            font-size: pxtorem($font-s);
+            margin-bottom: 25px;
+
+            @include mq('tablet') {
+                font-size: pxtorem($font-xm);
+            }
+        }
+
+        &-link {
+            font-family: $font-regular-istokweb;
+            font-size: pxtorem($font-s);
+            font-weight: 400;
+
+
+            @include mq('tablet') {
+                font-size: pxtorem($font-s);
+            }
+        }
+
+        &:has(p) p {
+            font-family: $font-regular-istokweb;
+            font-size: pxtorem($font-s);
+            font-weight: 400;
+
+            @include mq('tablet') {
+                font-size: pxtorem($font-s);
+            }
+        }
+
+        &__logo {
+            img {
+                @include fitImg;
+            }
+        }
+
+        &:has(&-social) &-social {
+            display: flex;
+            //justify-content: space-between;
+            gap: pxtorem($gutter30);
+
+            @include mq('tablet') {
+                margin-top: pxtorem(28px);
+            }
+        }
+    }
+}
